@@ -1,0 +1,21 @@
+{
+  "name": "ne0h12/decliner",
+  "description": "Decliner of words",
+  "license": "MIT",
+  "require-dev": {
+    "peridot-php/peridot": "dev-master"
+  },
+  "authors": [
+    {
+      "name": "Andrew Klyachin",
+      "email": "sfdiem5@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {},
+  "autoload": {
+    "psr-0": {
+      "Decliner\\": "src/"
+    }
+  }
+}
