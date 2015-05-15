@@ -10,27 +10,46 @@ class Decliner
 {
     /**
      * @param int $number
-     * @param Declinabe\Word $word
+     * @param Declinable\Word $word
      * @return string
      */
-    public static function on($number, Declinabe\Word $word)
+    public static function on($number, Declinable\Word $word)
     {
         $number = self::normalize($number);
 
-        switch ($number % 10) {
-            case 1:
-                return $number . ' ' . $word->getNominativ();
+        switch (true) {
+            case static::isPlural($number):
+                return $number . ' ' . $word->getPlural();
                 break;
-            case 2:
-            case 3:
-            case 4:
+            case static::isGenetiv($number):
                 return $number . ' ' . $word->getGenetiv();
                 break;
             default:
-                return $number . ' ' . $word->getPlural();
-            break;
-
+                return $number . ' ' . $word->getNominativ();
+                break;
         }
+    }
+
+    /**
+     * @param int $number
+     * @return bool
+     */
+    private static function isPlural($number)
+    {
+        $remainderOfTen = $number % 10;
+        $remainderOfHundred = $number % 100;
+
+        return ($number > 10 && ($remainderOfHundred - ($remainderOfHundred % 10)) / 10 == 1) ||
+               ($remainderOfTen == 0 || $remainderOfTen >= 5);
+    }
+
+    /**
+     * @param int $number
+     * @return bool
+     */
+    private static function isGenetiv($number)
+    {
+        return $number % 10 >= 2;
     }
 
     /**

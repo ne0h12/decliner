@@ -41,6 +41,26 @@ describe('Decliner', function () {
             assert($decline === '23458 дней', "но вернул '{$decline}'");
         });
 
+        it('должен вернуть "11 дней"', function() {
+            $decline = Decliner\Decliner::on(11, new \Decliner\Declinable\Word('день', 'дня', 'дней'));
+            assert($decline === '11 дней', "но вернул '{$decline}'");
+        });
+
+        it('должен вернуть "112 дней"', function() {
+            $decline = Decliner\Decliner::on(112, new \Decliner\Declinable\Word('день', 'дня', 'дней'));
+            assert($decline === '112 дней', "но вернул '{$decline}'");
+        });
+
+        it('должен вернуть "121 день"', function() {
+            $decline = Decliner\Decliner::on(121, new \Decliner\Declinable\Word('день', 'дня', 'дней'));
+            assert($decline === '121 день', "но вернул '{$decline}'");
+        });
+
+        it('должен вернуть "143 дня"', function() {
+            $decline = Decliner\Decliner::on(143, new \Decliner\Declinable\Word('день', 'дня', 'дней'));
+            assert($decline === '143 дня', "но вернул '{$decline}'");
+        });
+
     });
 
 });
