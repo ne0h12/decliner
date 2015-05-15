@@ -7,7 +7,6 @@
 require_once __DIR__ . '/../../Decliner/Decliner.php';
 require_once __DIR__ . '/../../Decliner/Declinable/Word.php';
 
-
 describe('Decliner', function () {
 
     describe('::on', function(){
