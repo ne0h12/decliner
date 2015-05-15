@@ -4,7 +4,7 @@
  * Date: 14.05.15
  */
 
-namespace Decliner\Declinabe;
+namespace Decliner\Declinable;
 
 
 class Word
