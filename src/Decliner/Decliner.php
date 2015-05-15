@@ -26,7 +26,6 @@ class Decliner
             case 4:
                 return $number . ' ' . $word->getGenetiv();
                 break;
-            case 5:
             default:
                 return $number . ' ' . $word->getPlural();
             break;
